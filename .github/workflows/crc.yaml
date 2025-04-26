@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Sync to S3
-        uses: aws-actions/s3-sync@v1
+        uses: aws-actions/amazon-s3-sync-actions@v1.2.0
         with:
           bucket: ${{ secrets.AWS_S3_BUCKET }}
-          source-dir: public
+          source: public
           delete: true
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
